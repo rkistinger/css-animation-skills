@@ -26,5 +26,14 @@
         <img src="images/downarrow.png" width="50" />
       </section>
     </header>
+
+    <script>
+      document.body.classList.add('js-loading')
+
+      window.addEventListener('load', () => {
+        // Trigger animations once content has loaded
+        document.body.classList.remove('js-loading')
+      })
+    </script>
   </body>
 </html>
