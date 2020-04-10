@@ -1,0 +1,67 @@
+/* Styles for the buttons */
+
+.button {
+  position: relative;
+  background: none;
+  text-decoration: none;
+}
+
+/* button shadow */
+.button::before {
+  content: '';
+  background: rgba(200, 200, 200, 0.8);
+  border-radius: 0.25em;
+  position: absolute;
+  top: 0.5em;
+  right: 0.1em;
+  bottom: -0.1em;
+  left: 0.1em;
+  /* make shadow sit under foreground */
+  z-index: -1;
+}
+
+/* button foreground */
+.button::after {
+  content: '';
+  background-color: #1a9e3f;
+  border-radius: 0.25em;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* make foreground sit under text (will be on top of shadow) */
+  z-index: -1;
+}
+
+.button:hover {
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+.button:hover::before {
+  transform: translateY(0.1em);
+}
+
+.button:hover::after {
+  background: #28b54f;
+}
+
+/* When the link/button is pressed */
+.button:active {
+  /* Un-sets scale if not specified */
+  transform: translateY(0.2em);
+  transition: none;
+}
+
+.button:active::before {
+  transform: translateY(-0.1em);
+  transition: none;
+}
+
+/* Apply same transition to all 3 elements (shadow, foreground, & text) */
+.button,
+.button::before,
+.button::after {
+  transition: all 0.5s cubic-bezier(0, 1, 0.3, 1);
+}
