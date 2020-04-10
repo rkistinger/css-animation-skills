@@ -2,13 +2,25 @@
   <head>
     <title>Interactions: Level up your CSS animation skills</title>
     <!-- The default layout, resets and and text styling -->
-    <link href="stylesheets/main.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet" />
     <!-- Custom styling for the header -->
-    <link href="stylesheets/links.css" rel="stylesheet">
+    <link href="links.css" rel="stylesheet" />
+    <link href="tooltips.css" rel="stylesheet" />
   </head>
   <body>
     <article class="content">
-      <p>... and here is some text. This text shows how <a href="https://cssanimation.rocks/#fresh">CSS animation</a> can help us make links be more fun and useful...</p>
+      <p>
+        ... and here is some text. This text shows how
+        <a
+          href="https://cssanimation.rocks/#fresh"
+          class="anchor-tooltip"
+          title="Learn about animating in the browser"
+          >CSS animation</a
+        >
+        can help us make links be more fun and useful...
+      </p>
     </article>
+
+    <script src="tooltip.js"></script>
   </body>
 </html>

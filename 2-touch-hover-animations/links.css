@@ -12,7 +12,6 @@ a::after {
   content: '';
   border-radius: 1em;
   border-top: 0.1em solid #2f56b0;
-  border-color: #457dfb;
   position: absolute;
   right: 100%;
   bottom: 0.14em;
@@ -24,7 +23,7 @@ a::after {
       - The browser automatically transitions the "to" and "from" states
       - Multiple transitions can be comma separated
   */
-  transition: border-color 0.4s ease-out;
+  transition: right 0.4s cubic-bezier(0, 0.5, 0, 1), border-color 0.4s ease-out;
 }
 
 a:hover,
@@ -35,8 +34,9 @@ a:focus {
 
 a:hover::after,
 a:focus::after {
-  animation: anchor-underline 2s cubic-bezier(0, 0.5, 0, 1) infinite;
+  right: 0;
   border-color: #457dfb;
+  /* animation: anchor-underline 2s cubic-bezier(0, 0.5, 0, 1) infinite; */
 }
 
 @keyframes anchor-underline {
