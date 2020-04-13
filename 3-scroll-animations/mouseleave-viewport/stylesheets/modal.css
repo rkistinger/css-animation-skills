@@ -1,0 +1,28 @@
+.article-container {
+  /* Defines animation to the visible state */
+  transition: all 3s 0.5s cubic-bezier(0, 1, 0.3, 1);
+}
+
+.mouse-out .article-container {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.2);
+  /* Defines animation to the invisible state */
+  transition: all 1s cubic-bezier(0.5, 0, 1, 0.5);
+}
+
+.modal {
+  opacity: 0;
+  transform: scale(0) rotateX(30deg) translateY(10em);
+  /* Disappear animation */
+  transition: transform 0.5s cubic-bezier(1, 0, 0.3, 1),
+    opacity 0.2s 0.3s ease-out;
+}
+
+.mouse-out .modal {
+  opacity: 1;
+  transform: none;
+  /* Appear animation */
+  transition: transform 1s 0.3s cubic-bezier(1, 0, 0.3, 1.5),
+    opacity 0.2s 0.6s ease-out;
+}
